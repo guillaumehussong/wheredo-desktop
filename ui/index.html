@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wheredo</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #12121e;
+    --card: #1c1c2e;
+    --text: #ececf4;
+    --muted: #9a9ab0;
+    --accent: #e63946;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Ubuntu, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 28px;
+    user-select: none;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .mark {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: relative;
+  }
+  .mark::after {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  h1 { font-size: 20px; font-weight: 700; }
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .card b { color: var(--accent); }
+  .muted { color: var(--muted); font-size: 12px; }
+  kbd {
+    background: #2c2c44;
+    border-radius: 5px;
+    padding: 2px 7px;
+    font-family: inherit;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <div class="logo">
+    <div class="mark"></div>
+    <h1>Wheredo</h1>
+  </div>
+  <div class="card">
+    Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> and ask a question out loud.<br />
+    Grok looks at your screen, answers with voice, and shows a
+    <b>red guide cursor</b> where to click.
+  </div>
+  <div class="card">
+    Wheredo lives in the <b>system tray</b> — this window can stay closed.<br />
+    <span class="muted">
+      Config: <code>.env</code> in the Wheredo data folder ·
+      Log: <code>wheredo.log</code> (tray menu → Open log file)
+    </span>
+  </div>
+</body>
+</html>
