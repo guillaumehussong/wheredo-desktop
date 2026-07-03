@@ -74,26 +74,28 @@ def tri_alpha(px, py, v0, v1, v2):
 
 
 def mark_geometry(size):
-    """Cursor tip + arrow body + target dot, normalized to canvas."""
+    """Cursor tip + arrow body + target dot — fills the canvas like SF Symbols."""
     s = size
-    # Tip (hot spot) — upper-left area, like a macOS pointer.
-    tip_x = s * 0.28
-    tip_y = s * 0.26
-    dot_x = tip_x + s * 0.055
-    dot_y = tip_y + s * 0.055
-    # Arrow outline: tip → shaft → tail (classic pointer silhouette).
-    tip = (tip_x, tip_y)
-    inner = (tip_x + s * 0.11, tip_y + s * 0.26)
-    tail = (tip_x + s * 0.04, tip_y + s * 0.34)
-    notch = (tip_x + s * 0.20, tip_y + s * 0.22)
+    pad = s * 0.08
+    box = s - 2 * pad
+    def pt(nx, ny):
+        # ny=0 top, ny=1 bottom (image coords)
+        return pad + nx * box, pad + ny * box
+
+    tip_x, tip_y = pt(0.06, 0.06)
+    inner_x, inner_y = pt(0.46, 0.60)
+    tail_x, tail_y = pt(0.14, 0.94)
+    notch_x, notch_y = pt(0.60, 0.70)
+    dot_x = tip_x + box * 0.07
+    dot_y = tip_y + box * 0.07
     return {
-        "tip": tip,
-        "inner": inner,
-        "tail": tail,
-        "notch": notch,
+        "tip": (tip_x, tip_y),
+        "inner": (inner_x, inner_y),
+        "tail": (tail_x, tail_y),
+        "notch": (notch_x, notch_y),
         "dot": (dot_x, dot_y),
-        "dot_r": s * 0.075,
-        "stroke": max(0.8, s * 0.045),
+        "dot_r": box * 0.11,
+        "stroke": max(0.9, box * 0.06),
     }
 
 
