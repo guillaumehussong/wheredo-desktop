@@ -4,7 +4,7 @@
 
 Powered by [xAI's Grok](https://x.ai) (vision, speech-to-text, text-to-speech). Requires a SuperGrok or X Premium account.
 
-> Looking for the macOS app? See [wheredo-mac](../wheredo-mac) — a native Swift app with the same features and the same configuration.
+> Looking for the macOS app? See [wheredo-mac](https://github.com/guillaumehussong/wheredo-mac) — a native Swift app with the same features and the same configuration.
 
 ## How it works
 
